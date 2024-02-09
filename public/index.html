@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Canvas</title>
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="title">
+            <h1>
+                My Canvas
+            </h1>
+        </div>
+        <div class="canvas_wrapper">
+            <canvas class="cursor_pen" id="canvas_bottom" style="z-index: 0;"></canvas>
+            <canvas class="cursor_pen" id="canvas_top" style="z-index: 1;"></canvas>
+        </div>     
+        <div class="menu">  
+            <div id="palette"></div>
+            <br>
+            <table>
+                <tr>
+                    <input type="range" min="1" max="80" value="5" class="slider" id="line_width"> 
+                    <img src="menu_icon/menu_brush.png">
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <td>
+                        <select class="select" id="font_style">
+                            <option value="sans-serif" selected="selected">Sans-serif</option>
+                            <option value="cursive">Cursive</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="monospace">Monospace</option>
+                            <option value="PMingLiU">新細明體</option>
+                            <option value="DFKai-sb">標楷體</option>
+                            <option value="Microsoft JhengHei">微軟正黑體</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select" id="font_size">
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14" selected="selected">14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                            <option value="24">24</option>
+                            <option value="48">48</option>
+                            <option value="64">64</option>
+                            <option value="100">100</option>
+                        </select>
+                    </td>           
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <td><button class="button" id="pen" onclick="ChangeTool('pen')" style="background-image: url('menu_icon/menu_pen.png')"></button></td>
+                    <td><button class="button" id="eraser" onclick="ChangeTool('eraser')" style="background-image: url('menu_icon/menu_eraser.png')"></button></td>
+                    <td><button class="button" id="text" onclick="ChangeTool('text')" style="background-image: url('menu_icon/menu_text.png')"></button></td>
+                    <td><button class="button" id="rainbow" onclick="ChangeTool('rainbow')" style="background-image: url('menu_icon/menu_rainbow.png')"></button></td>
+                    
+                </tr>
+                <tr>
+                    <td><button class="button" id="circle" onclick="ChangeTool('circle')" style="background-image: url('menu_icon/menu_circle.png');"></button></td>
+                    <td><button class="button" id="triangle" onclick="ChangeTool('triangle')" style="background-image: url('menu_icon/menu_triangle.png');"></button></td>
+                    <td><button class="button" id="rectangle" onclick="ChangeTool('rectangle')" style="background-image: url('menu_icon/menu_rectangle.png');"></button></td>
+                    <td><button class="button" id="clear" onclick="ClearAll()" style="background-image: url('menu_icon/menu_clear.png')"></button></td>
+                </tr>
+                <tr>
+                    <td><button class="button" id="undo" onclick="Undo()" style="background-image: url('menu_icon/menu_undo.png');"></button></td>
+                    <td><button class="button" id="redo" onclick="Redo()" style="background-image: url('menu_icon/menu_redo.png');"></button></td>
+                    <td><label for="upload"><img class="button" src="menu_icon/menu_upload.png"><input id="upload" type="file" accept="image/*"></label></td>
+                    <td><button class="button" id="download" onclick="Download()" style="background-image: url('menu_icon/menu_download.png')"></button></td>                 
+                </tr>
+            </table>
+        </div>
+        
+        <!--JavaScript-->
+        <script src="index.js"></script>
+    </body>
+</html>
